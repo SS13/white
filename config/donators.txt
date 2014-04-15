@@ -1,0 +1,2 @@
+#lowercase ckey - money amount
+account12 9001
