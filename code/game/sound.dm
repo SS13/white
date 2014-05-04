@@ -17,7 +17,7 @@
 		if ("dog3") soundin = pick('DOG3.ogg')
 		if ("chimpers") soundin = pick('monkey1.ogg')
 		if ("laugh") soundin = pick('laugh1.ogg', 'laugh2.ogg', 'laugh3.ogg')
-
+		if ("buttstep") soundin = pick('fart.ogg','poo2.ogg','fart1.ogg')
 
 	var/sound/S = sound(soundin)
 	S.wait = 0 //No queue

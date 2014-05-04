@@ -1385,5 +1385,5 @@
 #include "code\ZAS\ZAS_Zones.dm"
 #include "interface\interface.dm"
 #include "interface\skin.dmf"
-#include "maps\tgstation.2.0.7.1.dmm"
+#include "maps\tgstation2.0.7.2.dmm"
 // END_INCLUDE

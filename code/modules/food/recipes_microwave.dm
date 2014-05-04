@@ -122,6 +122,13 @@ I said no!
 	)
 	result = /obj/item/weapon/reagent_containers/food/snacks/brainburger
 
+/datum/recipe/assburger
+	reagents = list("flour" = 5)
+	items = list(
+		/obj/item/clothing/head/butt //do not place this recipe before /datum/recipe/humanburger
+	)
+	result = /obj/item/weapon/reagent_containers/food/snacks/assburger
+
 /datum/recipe/roburger
 	reagents = list("flour" = 5)
 	items = list(

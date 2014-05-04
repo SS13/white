@@ -652,6 +652,16 @@
 		reagents.add_reagent("alkysine", 6)
 		bitesize = 2
 
+/obj/item/weapon/reagent_containers/food/snacks/assburger
+	name = "assburger"
+	desc = "This burger gives off an air of awkwardness."
+	icon_state = "assburger" //missing assburger icon
+	New()
+		..()
+		reagents.add_reagent("nutriment", 10)
+//		reagents.add_reagent("poo", 2) //We will not use this until we makes poo...if we will make it ofcourse -- smet19
+		bitesize = 2
+
 /obj/item/weapon/reagent_containers/food/snacks/ghostburger
 	name = "Ghost Burger"
 	desc = "Spooky! It doesn't look very filling."

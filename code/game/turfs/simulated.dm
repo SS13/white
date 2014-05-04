@@ -33,6 +33,17 @@
 						O.footstep++
 				else
 					playsound(src, "clownstep", 20, 1)
+			if(istype(H.head, /obj/item/clothing/head/butt))
+				var/obj/item/clothing/head/butt/O = H.head
+				if(H.m_intent == "run")
+					if(O.footstep >= 2)
+						O.footstep = 0
+						playsound(src, "buttstep", 50, 1) // this will get annoying very fast.
+					else
+						O.footstep++
+
+				else
+					playsound(src, "buttstep", 30, 1)
 
 			var/list/bloodDNA = null
 			if(H.shoes)
