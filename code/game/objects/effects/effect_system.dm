@@ -210,7 +210,8 @@ steam.start() -- spawns the effect
 					sleep(5)
 					step(sparks,direction)
 				spawn(20)
-					sparks.delete()
+					if(sparks)			//They could delete thyself
+						sparks.delete()
 					src.total_sparks--
 
 
@@ -281,7 +282,8 @@ steam.start() -- spawns the effect
 					sleep(10)
 					step(smoke,direction)
 				spawn(75+rand(10,30))
-					smoke.delete()
+					if(smoke)			//They could delete thyself
+						smoke.delete()
 					src.total_smoke--
 
 

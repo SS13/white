@@ -1497,7 +1497,7 @@ datum
 					var/turf/FROM = get_turf(holder.my_atom) // the turf of origin we're travelling FROM
 					var/turf/TO = get_turf(chosen)			 // the turf of origin we're travelling TO
 
-					playsound(TO, 'phasein.ogg', 100, 1)
+					playsound(TO, 'sound/effects/phasein.ogg', 100, 1)
 
 					var/list/flashers = list()
 					for(var/mob/living/carbon/human/M in viewers(TO, null))
@@ -1525,7 +1525,7 @@ datum
 								if(M.client)
 									var/obj/blueeffect = new /obj(src)
 									blueeffect.screen_loc = "WEST,SOUTH to EAST,NORTH"
-									blueeffect.icon = 'effects.dmi'
+									blueeffect.icon = 'icons/effects/effects.dmi'
 									blueeffect.icon_state = "shieldsparkles"
 									blueeffect.layer = 17
 									blueeffect.mouse_opacity = 0
@@ -1565,7 +1565,7 @@ datum
 
 				var/list/critters = typesof(/mob/living/simple_animal) - blocked // list of possible critters
 
-				playsound(get_turf(holder.my_atom), 'phasein.ogg', 100, 1)
+				playsound(get_turf(holder.my_atom), 'sound/effects/phasein.ogg', 100, 1)
 
 				for(var/mob/living/carbon/human/M in viewers(get_turf(holder.my_atom), null))
 					if(M:eyecheck() <= 0)
@@ -1592,7 +1592,7 @@ datum
 				var/list/borks = typesof(/obj/item/weapon/reagent_containers/food/snacks) - /obj/item/weapon/reagent_containers/food/snacks
 				// BORK BORK BORK
 
-				playsound(get_turf(holder.my_atom), 'phasein.ogg', 100, 1)
+				playsound(get_turf(holder.my_atom), 'sound/effects/phasein.ogg', 100, 1)
 
 				for(var/mob/living/carbon/human/M in viewers(get_turf(holder.my_atom), null))
 					if(M:eyecheck() <= 0)

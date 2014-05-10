@@ -1333,3 +1333,35 @@
 		dirs = alldirs.Copy()
 
 	src.streak(dirs)
+
+/obj/machinery/disposal/toilet
+	name = "Toilet"
+	desc = "A pneumatic waste toilet."
+	icon = 'icons/obj/pipes/disposal.dmi'
+	icon_state = "toilet"
+
+	update()
+		overlays.Cut()
+		if(stat & BROKEN)
+			icon_state = "toilet-broken"
+			mode = 0
+			flush = 0
+			return
+
+		// flush handle
+		if(flush)
+			overlays += image('icons/obj/pipes/disposal.dmi', "toilet-handle")
+
+		// only handle is shown if no power
+		if(stat & NOPOWER || mode == -1)
+			return
+
+		// 	check for items in disposal - occupied light
+		if(contents.len > 0)
+			overlays += image('icons/obj/pipes/disposal.dmi', "toilet-full")
+
+		// charging and ready light
+		if(mode == 1)
+			overlays += image('icons/obj/pipes/disposal.dmi', "toilet-charge")
+		else if(mode == 2)
+			overlays += image('icons/obj/pipes/disposal.dmi', "toilet-ready")

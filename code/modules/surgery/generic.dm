@@ -6,6 +6,8 @@
 /datum/surgery_step/generic/
 	can_infect = 1
 	can_use(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
+		if(!istype(target))
+			return
 		if (target_zone == "eyes")	//there are specific steps for eye surgery
 			return 0
 		if (!hasorgans(target))
@@ -30,6 +32,8 @@
 	max_duration = 110
 
 	can_use(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
+		if(!istype(target))
+			return 0
 		var/datum/organ/external/affected = target.get_organ(target_zone)
 		return ..() && affected.open == 0 && target_zone != "mouth"
 

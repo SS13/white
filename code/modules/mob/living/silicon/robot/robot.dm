@@ -89,7 +89,7 @@
 		icon_state = "secborg"
 		modtype = "Security"
 	else
-		laws = new /datum/ai_laws/nanotrasen()
+		laws = new /datum/ai_laws/asimov()
 		connected_ai = select_active_ai_with_fewest_borgs()
 		if(connected_ai)
 			connected_ai.connected_robots += src

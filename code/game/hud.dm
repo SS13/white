@@ -333,7 +333,7 @@ var/datum/global_hud/global_hud = new()
 
 	if(ishuman(mymob))
 		if(get_special_uistyle(mymob.client.prefs.UI_style))
-			custom_hud(ui_style, )
+			custom_hud(ui_style,get_special_uistyle(mymob.client.prefs.UI_style))
 		else
 			human_hud(ui_style) // Pass the player the UI style chosen in preferences
 

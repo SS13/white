@@ -287,4 +287,5 @@ proc/tg_list2text(list/list, glue=",")
 		if("Orange")	return 'icons/mob/screen1_Orange.dmi'
 		if("Inferno")	return 'icons/mob/screen1_inferno.dmi'
 		if("Cooldown")	return 'icons/mob/screen1_cooldown.dmi'
+		if("Luna")		return 'icons/mob/screen1luna.dmi'
 		else			return 'icons/mob/screen1_Midnight.dmi'

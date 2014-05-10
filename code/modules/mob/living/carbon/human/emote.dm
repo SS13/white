@@ -580,11 +580,10 @@
 				message = ("<B>[src]</B> tried to fart, but he forgot that his butt was exploded!")
 			else
 				if (fail_farts >= 15 && src.called_superfart < 1)
-					emote("superfart")
 					anus_bombanull()
 					return
 				else
-					adjustBrainLoss(1)
+//					adjustBrainLoss(1)
 					switch(rand(1, 48))
 						if(1)
 							message = "<B>[src]</B> lets out a girly little 'toot' from \his butt."
@@ -735,23 +734,12 @@
 						if (world.time % 3)
 							usr << "<span class='warning'>You feeling like your ass cracking. Uh-oh..."
 							fail_farts ++
-					else
-						return
+
 
 
 				var/area/A = get_area(src.loc)
 				if(A && A.name == "\improper Chapel")
-					lost_anus = 1
-					message = "<B>[src]</B>'s butt explodes!"
-					new /obj/item/clothing/head/butt(src.loc)
-					playsound(src.loc, 'superfart.ogg', 80, 0)
-					src.Weaken(12)
-					flick("e_flash", src.flash)
-					var/datum/organ/external/affecting = src.get_organ("groin")
-					if(affecting)
-						if(affecting.take_damage(10, 15))
-							src.UpdateDamageIcon()
-						src.updatehealth()
+					anus_bombanull()
 				for(var/obj/item/weapon/storage/bible/B in src.loc)
 					if(B)
 						message = "\red <B>[src]</B> farts on the bible and then blows up!"
@@ -805,19 +793,9 @@
 				sleep(1)
 				emote("fart")
 				sleep(1)
-				src << "\blue Your butt explodes! OH SHIT!"
 				message = "<B>[src]</B>'s butt explodes!"
-				new /obj/item/clothing/head/butt(src.loc)
-				lost_anus = 1
 //				new /obj/decal/cleanable/poo(src.loc)
-				playsound(src.loc, 'superfart.ogg', 80, 0)
-				src.Weaken(12)
-				flick("e_flash", src.flash)
-				var/datum/organ/external/affecting = src.get_organ("groin")
-				if(affecting)
-					if(affecting.take_damage(10, 15))
-						src.UpdateDamageIcon()
-					src.updatehealth()
+				anus_bombanull()
 
 		if ("help")
 			src << "blink, blink_r, blush, bow-(none)/mob, burp, choke, chuckle, clap, collapse, cough,\ncry, custom, deathgasp, drool, eyebrow, frown, gasp, giggle, groan, grumble, handshake, hug-(none)/mob, glare-(none)/mob,\ngrin, laugh, look-(none)/mob, moan, mumble, nod, pale, point-atom, raise, salute, shake, shiver, shrug,\nsigh, signal-#1-10, smile, sneeze, sniff, snore, stare-(none)/mob, tremble, twitch, twitch_s, whimper,\nwink, yawn"

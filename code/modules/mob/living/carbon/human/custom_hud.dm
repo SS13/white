@@ -1,8 +1,10 @@
 /proc/get_special_uistyle(ui_style)
 	if(ui_style in list("Inferno", "Cooldown"))
 		return /datum/hud_special/inferno
+	if(ui_style in list("Luna")) // I will add old skin also
+		return /datum/hud_special/oldlike
 
-/datum/hud_special/inferno
+datum/hud_special/inferno
 	locations = list(
 	"inventory" = "SOUTH,WEST+2",
 
@@ -69,6 +71,80 @@
 				if(H.ears)		H.ears.screen_loc = null
 				if(H.glasses)	H.glasses.screen_loc = null
 				if(H.head)		H.head.screen_loc = null
+		return 1
+
+/datum/hud_special/oldlike
+	locations = list(
+	"inventory" = "SOUTH,4",
+
+	"mask" = "SOUTH+1,1",
+	"oclothing" = "SOUTH,2",
+	"iclothing" = "SOUTH-1,2",
+
+	"sstore1" = "SOUTH+1,4",
+	"id" = "SOUTH-1,1",
+	"belt" = "SOUTH-1,3",
+	"back" = "SOUTH+1,3",
+
+	"rhand" = "SOUTH,1",
+	"lhand" = "SOUTH,3",
+//	"equip" = "SOUTH,CENTER",
+//	"swaphand1" = "SOUTH-1,6",
+	"swaphand" = "SOUTH-1,6",
+//	"swaphand2" = "SOUTH-1,7",
+
+	"storage1" = "SOUTH-1,4",
+	"storage2" = "SOUTH-1,5",
+
+	"throw" = "SOUTH-1,8",
+	"drop" = "SOUTH-1,7",
+	"pull" = "SOUTH-1,10",
+	"resist" = "EAST+1,SOUTH-1",
+	"acti" = "SOUTH-1,12",
+	"movi" = "SOUTH-1,14",
+	"zonesel" = "EAST+1, NORTH",
+
+	"inventory2" = "SOUTH,4",
+	"shoes" = "SOUTH,4",
+	"head" = "SOUTH+1,2",
+	"gloves" = "SOUTH,5",
+	"ears" = "SOUTH,6",
+	"glasses" = "SOUTH,7",
+
+	"filler" = "SOUTH-1,WEST to SOUTH-1,EAST",
+	"filler2" = "EAST+1,NORTH-1 to EAST+1,SOUTH",
+
+	"nutrition" = "EAST+1, NORTH-12",
+	"rest" = "EAST+1, NORTH-13",
+	"temp" = "EAST+1, NORTH-10",
+	"health" = "EAST+1, NORTH-11",
+	"internal" = "EAST+1, NORTH-2",
+
+	"toxin" = "EAST+1, NORTH-6",
+	"fire" = "EAST+1, NORTH-8",
+	"oxygen" = "EAST+1, NORTH-4",
+	"pressure" = "EAST+1, SOUTH+5")
+
+	hideable = list(
+	"inventory2" =1, "shoes" = 1,
+	"gloves" = 1, "sstore1" = 1,
+	"ears" = 1, "glasses" = 1)
+
+	hidden_inventory_update()
+		if(ishuman(myhud.mymob))
+			var/mob/living/carbon/human/H = myhud.mymob
+			if(myhud.inventory_shown && myhud.hud_shown)
+				if(H.shoes)		H.shoes.screen_loc = locations["shoes"]
+				if(H.gloves)	H.gloves.screen_loc = locations["gloves"]
+				if(H.ears)		H.ears.screen_loc = locations["ears"]
+				if(H.glasses)	H.glasses.screen_loc = locations["glasses"]
+				if(H.s_store)	H.s_store.screen_loc = locations["sstore1"]
+			else
+				if(H.shoes)		H.shoes.screen_loc = null
+				if(H.gloves)	H.gloves.screen_loc = null
+				if(H.ears)		H.ears.screen_loc = null
+				if(H.glasses)	H.glasses.screen_loc = null
+				if(H.s_store)	H.s_store.screen_loc = null
 		return 1
 
 /datum/hud/proc/custom_hud(var/uistyle='icons/mob/screen1_inferno.dmi', var/specialtype = /datum/hud_special/inferno)
@@ -152,7 +228,7 @@
 	using.name = "drop"
 	using.icon = uistyle
 	using.icon_state = "act_drop"
-	using.screen_loc = special.locations["throw"]
+	using.screen_loc = special.locations["drop"]
 	using.layer = 19
 	src.hotkeybuttons += using
 
@@ -208,11 +284,19 @@
 	src.l_hand_hud_object = inv_box
 	src.adding += inv_box
 
+	mymob.hands = new /obj/screen/inventory()
+	mymob.hands.icon = uistyle
+	mymob.hands.icon_state = "hand"
+	mymob.hands.name = "hand"
+	mymob.hands.screen_loc = special.locations["swaphand"]
+	mymob.hands.dir = NORTH
+
+
 	using = new /obj/screen/inventory()
 	using.name = "hand"
 	using.dir = SOUTH
 	using.icon = uistyle
-	using.icon_state = "hand1"
+	using.icon_state = "act_hand"
 	using.screen_loc = special.locations["swaphand1"]
 	using.layer = 19
 	src.adding += using
@@ -472,8 +556,18 @@
 	mymob.pullin.icon = uistyle
 	mymob.pullin.icon_state = "pull0"
 	mymob.pullin.name = "pull"
-	mymob.pullin.screen_loc = special.locations["resist"]
+	mymob.pullin.screen_loc = special.locations["pull"]
 	src.hotkeybuttons += mymob.pullin
+
+	mymob.rest = new /obj/screen()
+	mymob.rest.name = "rest"
+	mymob.rest.icon = uistyle
+	mymob.rest.icon_state = "rest0"
+	mymob.rest.screen_loc = special.locations["rest"]
+	if (mymob.resting)
+		mymob.rest.icon_state = "rest1"
+	else
+		mymob.rest.icon_state = "rest0"
 
 // --
 	mymob.blind = new /obj/screen()
