@@ -4,7 +4,7 @@
 	if(ui_style in list("Luna")) // I will add old skin also
 		return /datum/hud_special/oldlike
 
-datum/hud_special/inferno
+/datum/hud_special/inferno
 	locations = list(
 	"inventory" = "SOUTH,WEST+2",
 
@@ -27,6 +27,8 @@ datum/hud_special/inferno
 	"storage2" = "SOUTH-1,EAST-4",
 
 	"throw" = "SOUTH,EAST",
+	"drop" = "SOUTH,EAST",
+	"pull" = "SOUTH,EAST-1",
 	"resist" = "SOUTH,EAST-1",
 	"acti" = "SOUTH-1,EAST-1",
 	"movi" = "SOUTH-1,EAST-2",
@@ -296,7 +298,7 @@ datum/hud_special/inferno
 	using.name = "hand"
 	using.dir = SOUTH
 	using.icon = uistyle
-	using.icon_state = "act_hand"
+	using.icon_state = "hand1"
 	using.screen_loc = special.locations["swaphand1"]
 	using.layer = 19
 	src.adding += using
@@ -619,7 +621,7 @@ datum/hud_special/inferno
 
 	mymob.client.screen = null
 
-	mymob.client.screen += list(mymob.throw_icon, mymob.zone_sel, mymob.oxygen, mymob.pressure, mymob.toxin, mymob.bodytemp, mymob.internals, mymob.fire, mymob.healths, mymob.nutrition_icon, mymob.pullin, mymob.blind, mymob.flash, mymob.damageoverlay)
+	mymob.client.screen += list( mymob.throw_icon, mymob.zone_sel, mymob.oxygen, mymob.pressure, mymob.toxin, mymob.bodytemp, mymob.internals, mymob.fire, mymob.healths, mymob.nutrition_icon, mymob.rest, mymob.pullin, mymob.hands, mymob.blind, mymob.flash, mymob.damageoverlay)
 	mymob.client.screen += src.adding + src.hotkeybuttons
 	inventory_shown = 0
 
