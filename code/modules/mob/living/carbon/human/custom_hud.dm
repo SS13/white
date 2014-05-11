@@ -292,7 +292,7 @@
 	mymob.hands.name = "hand"
 	mymob.hands.screen_loc = special.locations["swaphand"]
 	mymob.hands.dir = NORTH
-
+	src.swap_hand = mymob
 
 	using = new /obj/screen/inventory()
 	using.name = "hand"

@@ -129,10 +129,11 @@
 		else
 			hud_used.l_hand_hud_object.icon_state = "hand_inactive"
 			hud_used.r_hand_hud_object.icon_state = "hand_active"
-	if (!( src.hand ))
-		src.hands.dir = NORTH
-	else
-		src.hands.dir = SOUTH
+	if(hud_used.swap_hand)
+		if (!( src.hand ))
+			src.hands.dir = NORTH
+		else
+			src.hands.dir = SOUTH
 	return
 
 /mob/living/carbon/proc/activate_hand(var/selhand) //0 or "r" or "right" for right hand; 1 or "l" or "left" for left hand.

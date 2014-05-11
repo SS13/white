@@ -201,6 +201,7 @@ var/datum/global_hud/global_hud = new()
 	var/obj/screen/l_hand_hud_object
 	var/obj/screen/action_intent
 	var/obj/screen/move_intent
+	var/obj/screen/swap_hand
 
 	var/list/adding
 	var/list/other
