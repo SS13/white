@@ -84,7 +84,7 @@
 //	msg += "<b>There are also [num_mods_online] moderators online.</b> To view online moderators, type 'modwho'\n"
 	src << msg
 
-/*/client/verb/modwho()
+/client/verb/modwho()
 	set category = "Admin"
 	set name = "Modwho"
 
@@ -119,7 +119,7 @@
 	msg = "<b>Current Moderators ([num_mods_online]):</b>\n" + msg
 	msg += "<b>There are also [num_admins_online] admins online.</b> To view online admins, type 'adminwho'\n"
 	src << msg
-*/
+
 /client/verb/active_players()
 	set category = "OOC"
 	set name = "Active Players"
