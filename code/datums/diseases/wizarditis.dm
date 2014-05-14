@@ -45,10 +45,10 @@ STI KALY - blind
 			if(prob(1))
 				affected_mob.say(pick("NEC CANTIO!","AULIE OXIN FIERA!","STI KALY!","EI NATH!"))
 				return
-			if(prob(50))
+			if(prob(1)&&prob(50))
 				affected_mob << "\red You feel [pick("the tidal wave of raw power building inside","that this location gives you a +2 to INT and +1 to WIS","an urge to teleport")]."
 				spawn_wizard_clothes(50)
-			if(prob(1) && prob(25))
+			if(prob(1)&&prob(1))
 				teleport()
 	return
 

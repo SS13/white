@@ -199,7 +199,7 @@
 	power_channel = LIGHT //Lights are calc'd via area so they dont need to be in the machine list
 	var/on = 0					// 1 if on, 0 if off
 	var/on_gs = 0
-	var/brightness = 8			// luminosity when on, also used in power calculation
+	var/brightness = 6			// luminosity when on, also used in power calculation
 	var/status = LIGHT_OK		// LIGHT_OK, _EMPTY, _BURNED or _BROKEN
 	var/flickering = 0
 	var/light_type = /obj/item/weapon/light/tube		// the type of light item
@@ -243,7 +243,7 @@
 	spawn(2)
 		switch(fitting)
 			if("tube")
-				brightness = 8
+				brightness = 6
 				if(prob(2))
 					broken(1)
 			if("bulb")
@@ -627,7 +627,7 @@
 	base_state = "ltube"
 	item_state = "c_tube"
 	g_amt = 100
-	brightness = 8
+	brightness = 6
 
 /obj/item/weapon/light/tube/large
 	w_class = 2

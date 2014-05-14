@@ -502,6 +502,18 @@ datum
 			required_reagents = list("water" = 5, "milk" = 5, "oxygen" = 5)
 			result_amount = 15
 
+		condensedcapsaicin
+			name = "Condensed Capsaicin"
+			id = "condensedcapsaicin"
+			result = "condensedcapsaicin"
+			required_reagents = list("capsaicin" = 2)
+			required_catalysts = list("plasma" = 5)
+			result_amount = 1
+
+///////////////////////////////////////////////////////////////////////////////////
+////////////////////////VIROLOGY///////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+
 		mix_virus
 			name = "Mix Virus"
 			id = "mixvirus"
@@ -518,18 +530,18 @@ datum
 					if(D)
 						D.Evolve(level_min, level_max)
 
-
 			mix_virus_2
 				name = "Mix Virus 2"
 				id = "mixvirus2"
-				required_reagents = list("mutagen" = 5)
+				required_reagents = list("mutagen" = 1)
 				level_min = 2
 				level_max = 4
+
 
 			mix_virus_3
 				name = "Mix Virus 3"
 				id = "mixvirus3"
-				required_reagents = list("plasma" = 5)
+				required_reagents = list("plasma" = 1)
 				level_min = 4
 				level_max = 6
 
@@ -546,13 +558,6 @@ datum
 						if(D)
 							D.Devolve()
 
-		condensedcapsaicin
-			name = "Condensed Capsaicin"
-			id = "condensedcapsaicin"
-			result = "condensedcapsaicin"
-			required_reagents = list("capsaicin" = 2)
-			required_catalysts = list("plasma" = 5)
-			result_amount = 1
 ///////////////////////////////////////////////////////////////////////////////////
 
 // foam and foam precursor

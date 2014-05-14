@@ -117,7 +117,7 @@
 				msg += "\t[C] is a [C.holder.rank]\n"
 
 	msg = "<b>Current Moderators ([num_mods_online]):</b>\n" + msg
-//	msg += "<b>There are also [num_admins_online] admins online.</b> To view online admins, type 'adminwho'\n"
+	msg += "<b>There are also [num_admins_online] admins online.</b> To view online admins, type 'adminwho'\n"
 	src << msg
 
 /client/verb/active_players()
