@@ -54,7 +54,6 @@ Stealth and Camouflage Items;
 Whitespace:Seperator;
 Devices and Tools;
 /obj/item/weapon/card/emag:3:Cryptographic Sequencer;
-/obj/item/device/hacktool:4:Hacktool (Slow, but stealthy.  Unlimited uses);
 /obj/item/weapon/storage/toolbox/syndicate:1:Fully Loaded Toolbox;
 /obj/item/weapon/storage/box/syndie_kit/space:3:Space Suit;
 /obj/item/clothing/glasses/thermal/syndi:3:Thermal Imaging Glasses;
@@ -73,6 +72,7 @@ Implants;
 Whitespace:Seperator;
 (Pointless) Badassery;
 /obj/item/toy/syndicateballoon:10:For showing that You Are The BOSS (Useless Balloon);"}
+//obj/item/device/hacktool:4:Hacktool (Slow, but stealthy.  Unlimited uses);
 
 
 /datum/game_mode/proc/announce() //to be calles when round starts
