@@ -959,11 +959,9 @@ datum/preferences
 							b_eyes = hex2num(copytext(new_eyes, 6, 8))
 
 					if("s_tone")
-						if(species != "Human" || "Android")
-							return
-						var/new_s_tone = input(user, "Choose your character's skin-tone:\n(Light 1 - 220 Dark)", "Character Preference")  as num|null
+						var/new_s_tone = input(user, "Choose your character's skin-tone:", "Character Preference")  as num|null // Translate it 1946
 						if(new_s_tone)
-							s_tone = 35 - max(min( round(new_s_tone), 220),1)
+							s_tone = 100 - max(min( round(new_s_tone), 550),1)
 
 					if("ooccolor")
 						var/new_ooccolor = input(user, "Choose your OOC colour:", "Game Preference") as color|null
