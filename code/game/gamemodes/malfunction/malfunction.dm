@@ -65,6 +65,9 @@
 		AI_mind.special_role = "malfunction"
 
 		AI_mind.current.verbs += /datum/game_mode/malfunction/proc/takeover
+		var/mob/living/silicon/decoy/D = new /mob/living/silicon/decoy(AI_mind.current.loc)
+		spawn(200)
+			D.name = AI_mind.current.name
 
 		var/obj/loc_landmark = locate("landmark*ai")
 		AI_mind.current.loc = loc_landmark.loc
