@@ -376,6 +376,9 @@
 		overlays.Cut()
 		overlays += redlight
 		return
+	else if(istype(W, /obj/item/device/hacktool) && src.req_access && !src.broken)
+		src.req_access = 0
+		user << "You reset [src]'s lock."
 	else if ( (istype(W, /obj/item/weapon/card/emag)||istype(W, /obj/item/weapon/melee/energy/blade)) && locked &&!broken)
 		overlays.Cut()
 		overlays += emag

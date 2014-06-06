@@ -853,3 +853,19 @@
 	icon_state = "capacitor"
 	desc = "A debug item for research."
 	origin_tech = "materials=8;programming=8;magnets=8;powerstorage=8;bluespace=8;combat=8;biotech=8;syndicate=8"
+
+// So far, its functionality is found only in code/game/machinery/doors/airlock.dm
+/obj/item/device/hacktool
+	name = "hacktool"
+	icon = 'icons/obj/hacktool.dmi'
+	icon_state = "hacktool"
+	origin_tech = "magnets=2;engineering=5;syndicate=3"
+	flags = FPRINT | CONDUCT
+	force = 5.0
+	w_class = 2.0
+	throwforce = 5.0
+	throw_range = 15
+	throw_speed = 3
+	desc = "An item of dubious origins, with wires and antennas protruding out of it."
+	m_amt = 60
+	g_amt = 20

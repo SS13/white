@@ -44,6 +44,7 @@ Stealthy and Inconspicuous Weapons;
 /obj/item/weapon/pen/paralysis:3:Paralysis Pen;
 /obj/item/weapon/soap/syndie:1:Syndicate Soap;
 /obj/item/weapon/cartridge/syndicate:3:Detomatix PDA Cartridge;
+/obj/item/weapon/reagent_containers/pill/cyanide:2:Cyanide Pill
 Whitespace:Seperator;
 Stealth and Camouflage Items;
 /obj/item/weapon/storage/box/syndie_kit/chameleon:7:Chameleon Kit;
@@ -54,12 +55,15 @@ Stealth and Camouflage Items;
 Whitespace:Seperator;
 Devices and Tools;
 /obj/item/weapon/card/emag:3:Cryptographic Sequencer;
+/obj/item/device/hacktool:4:Hacktool (Slow, but stealthy.  Unlimited uses);
 /obj/item/weapon/storage/toolbox/syndicate:1:Fully Loaded Toolbox;
 /obj/item/weapon/storage/box/syndie_kit/space:3:Space Suit;
 /obj/item/clothing/glasses/thermal/syndi:3:Thermal Imaging Glasses;
 /obj/item/device/encryptionkey/binary:3:Binary Translator Key;
 /obj/item/weapon/aiModule/syndicate:7:Hacked AI Upload Module;
 /obj/item/weapon/plastique:2:C-4 (Destroys walls);
+/obj/item/weapon/syndie/c4explosive:4:Low power explosive charge;
+/obj/item/weapon/syndie/c4explosive/heavy:7:HIGH power explosive charge;
 /obj/item/device/powersink:5:Powersink (DANGER!);
 /obj/item/device/radio/beacon/syndicate:7:Singularity Beacon (DANGER!);
 /obj/item/weapon/circuitboard/teleporter:20:Teleporter Circuit Board;
@@ -72,7 +76,7 @@ Implants;
 Whitespace:Seperator;
 (Pointless) Badassery;
 /obj/item/toy/syndicateballoon:10:For showing that You Are The BOSS (Useless Balloon);"}
-//obj/item/device/hacktool:4:Hacktool (Slow, but stealthy.  Unlimited uses);
+
 
 
 /datum/game_mode/proc/announce() //to be calles when round starts

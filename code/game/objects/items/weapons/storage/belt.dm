@@ -52,6 +52,7 @@
 		"/obj/item/weapon/cable_coil",
 		"/obj/item/device/t_scanner",
 		"/obj/item/device/analyzer",
+		"/obj/item/device/hacktool", // Why not?
 		"/obj/item/taperoll/engineering")
 
 

@@ -75,6 +75,9 @@
 		user.drop_item()
 		if(W)
 			W.loc = src.loc
+	else if((istype(W, /obj/item/device/hacktool)) && src.req_access && !src.broken)
+		src.req_access = 0
+		user << "You reset [src]'s lock."
 	else if((istype(W, /obj/item/weapon/card/emag)||istype(W, /obj/item/weapon/melee/energy/blade)) && !src.broken)
 		broken = 1
 		locked = 0
