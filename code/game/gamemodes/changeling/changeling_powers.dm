@@ -384,6 +384,24 @@
 			C.SetStunned(0)
 			C.SetWeakened(0)
 			C.radiation = 0
+			if(ishuman(C))
+				var/mob/living/carbon/human/H = C
+				H.vessel.add_reagent("blood",560-H.vessel.total_volume)
+				H.fixblood()
+
+				for(var/datum/organ/external/O in H.organs)
+					if(!(O.status & ORGAN_ROBOT))
+						O.status &= ~ORGAN_BROKEN
+						O.status &= ~ORGAN_BLEEDING
+						O.status &= ~ORGAN_SPLINTED
+						O.status &= ~ORGAN_ATTACHABLE
+						O.status &= ~ORGAN_DESTROYED
+						O.wounds.Cut()
+						O.heal_damage(1000,1000,1,1)
+
+				for(var/datum/organ/internal/I in H.organs)
+					I.damage = 0
+
 			C.heal_overall_damage(C.getBruteLoss(), C.getFireLoss())
 			C.reagents.clear_reagents()
 			C << "<span class='notice'>We have regenerated.</span>"

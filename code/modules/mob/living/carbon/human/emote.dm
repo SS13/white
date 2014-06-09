@@ -744,7 +744,7 @@
 					if(B)
 						message = "\red <B>[src]</B> farts on the bible and then blows up!"
 						src.gib()
-//						new /obj/item/clothing/head/butt(src.loc)
+						new /obj/item/clothing/head/butt(src.loc)
 
 
 
@@ -851,6 +851,12 @@
 	lost_anus = 1
 	src.Weaken(12)
 	flick("e_flash", src.flash)
+	new /obj/item/clothing/head/butt(src.loc)
+	if (prob(10))
+		playsound(world, 'superfart.ogg', 100, 0)
+	else
+		playsound(src.loc, 'superfart.ogg', 80, 0)
+	src.Weaken(12)
 	var/datum/organ/external/affecting = src.get_organ("groin")
 	if(affecting)
 		if(affecting.take_damage(25, 20))

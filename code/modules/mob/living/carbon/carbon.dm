@@ -241,7 +241,7 @@
 
 			if(vent_found)
 				if(vent_found.network&&vent_found.network.normal_members.len)
-					var/list/vents[0]
+					var/list/vents = list()
 					for(var/obj/machinery/atmospherics/unary/vent_pump/temp_vent in vent_found.network.normal_members)
 						if(temp_vent.loc == loc)
 							continue
@@ -316,6 +316,7 @@
 	else
 		src << "You must be conscious to do this!"
 	return
+
 
 
 /mob/living/carbon/clean_blood()
